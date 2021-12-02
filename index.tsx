@@ -145,7 +145,7 @@ class WaterFallList<ItemT> extends React.Component<
     if (data === null || data.length === 0) {
       return emptyElement;
     }
-    console.log(this.state.columns);
+    // console.log(this.state.columns);
     return (
       <View
         key="$container"
