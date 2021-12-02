@@ -16,7 +16,5 @@
   ],
   "author": "xigua tang",
   "license": "MIT",
-  "homepage": "https://github.com/XIGUATANG/react-native-waterfall-layout-list",
-  "dependencies": {},
-  "devDependencies": {}
+  "homepage": "https://github.com/XIGUATANG/react-native-waterfall-layout-list"
 }
