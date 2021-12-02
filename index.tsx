@@ -209,6 +209,8 @@ class WaterFallList<ItemT> extends React.Component<
       onScrollBeginDrag,
       onScrollEndDrag,
       contentContainerStyle,
+      refreshing,
+      refreshControl,
     } = this.props;
 
     if (data == null || data.length === 0) {
@@ -237,6 +239,8 @@ class WaterFallList<ItemT> extends React.Component<
           onScrollBeginDrag,
           contentContainerStyle,
           onScrollEndDrag,
+          refreshing,
+          refreshControl,
         }}
         keyExtractor={() => '1'}
       />
