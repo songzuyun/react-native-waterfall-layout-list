@@ -10,6 +10,7 @@ import {
 
 export interface WaterFallListProps<ItemT> extends FlatListProps<ItemT> {
   getHeight: (n: ItemT,index:number) => number;
+  getData: (data: Object) =>  {};
   listStyle?: ViewStyle | null;
   initialScrollY?: number;
   needItemLayout?: boolean;
@@ -73,7 +74,7 @@ class WaterFallList<ItemT> extends React.Component<
         (prev, cur) => (cur.totalHeight < prev.totalHeight ? cur : prev),
         columns[0],
       );
-      column.data.push({
+            column.data.push({
         ...item,
       });
       column.dataIndexs.push(index);
@@ -81,6 +82,8 @@ class WaterFallList<ItemT> extends React.Component<
       column.heights.push(_height);
       column.totalHeight += _height;
     });
+    props.getData(columns);
+
     return { columns };
   }
 
@@ -129,6 +132,7 @@ class WaterFallList<ItemT> extends React.Component<
       contentContainerStyle,
       renderItem,
       getHeight,
+      getData,
       needItemLayout,
       ...reset
     } = this.props;
